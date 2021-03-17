@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Blog App{% endblock title %}
+
+{% block content %}
+
+<div class="container pt-3">
+    <h1 class="display-1 mt-5 text-primary text-center">Blog Posts</h1>
+    <div class="divider bg-primary border border-primary"></div>
+
+    <div class="mt-3 px-3" id="all-posts">
+        {% for post in all_posts_list %}
+
+        <small class="text-muted mx-1">Posted: {{post.created_at}} by {{post.author}}</small>
+            <div id="one-post" class="border border-primary rounded mb-4 px-2 py-2">
+                <div class="d-flex justify-content-between">
+                    <h3 class="g-font">{{post.title}}</h3>
+                    <small><i class="fas fa-flag text-muted" onclick="btnFlag('{{post.id}}')"></i></small>
+                </div>
+                <p class="px-1">{{ post.body }}</p>
+                <div class="d-flex justify-content-between" id="btn-post">
+                    <div class="mt-3 px-2">
+                        <i id="likes-{{post.id}}" class="fas fa-thumbs-up text-muted">&nbsp {{post.likes}} &nbsp</i>
+                        <i id="dislikes-{{post.id}}" class="fas fa-thumbs-down text-muted">&nbsp {{post.dislikes}} &nbsp</i>
+                    </div>
+                    <div>
+                        <a href="{% url 'one_post' post.pk %}"><button class="btn btn-small btn-primary">Read</button></a>
+                        <button onclick="btnLike('{{post.id}}')" class="btn btn-small btn-success">Like</button>
+                        <button onclick="btnDislike('{{post.id}}')" class="btn btn-small btn-danger">Dislike</button>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+
+        <button class="btn btn-lg btn-primary mt-3">New Post</button>
+    </div>
+
+
+</div>
+
+{% endblock content %}

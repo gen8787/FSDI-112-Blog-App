@@ -1,0 +1,19 @@
+body {
+    background-image: linear-gradient(#aadaf1, #aadaf181);
+}
+
+.container {
+    min-height: 90vh;
+}
+
+#one-post {
+    background-image: linear-gradient(#ebedeedc, #dddfe0a2);
+}
+
+.g-font {
+    font-family: 'Oswald', sans-serif;
+}
+
+footer {
+    min-height: 10vh;
+}
