@@ -4,9 +4,11 @@
 {% block content %}
 
 <div class="container pt-3">
+    <!-- T I T L E -->
     <h1 class="display-2 mt-5 text-primary text-center">Blog Posts</h1>
     <div class="divider bg-primary border border-primary"></div>
 
+    <!-- A L L   P O S T S   L I S T -->
     <div class="mt-3 px-3" id="all-posts">
         {% for post in all_posts_list %}
 
@@ -14,6 +16,7 @@
 
             <div id="one-post" class="border border-primary rounded mb-4 px-2 py-2">
 
+                <!-- P O S T   T I T L E -->
                 <div class="d-flex justify-content-between">
                     <h3 class="g-font">{{post.title}}</h3>
                     <small><i class="fas fa-flag text-muted" onclick="btnFlag('{{post.id}}')"></i></small>
@@ -21,13 +24,14 @@
                 
                 <p class="px-1">{{ post.body }}</p>
                 
+                <!-- P O S T   B T N S -->
                 <div class="d-flex justify-content-between" id="btn-post">
                     <div class="mt-3 px-2">
                         <i id="likes-{{post.id}}" class="fas fa-thumbs-up text-muted">&nbsp {{post.likes}} &nbsp</i>
                         <i id="dislikes-{{post.id}}" class="fas fa-thumbs-down text-muted">&nbsp {{post.dislikes}} &nbsp</i>
                     </div>
 
-                    <div>
+                    <div class="edit-like-btns">
                         <a href="{% url 'one_post' post.pk %}"><button class="btn btn-small btn-primary">Read</button></a>
                         <button onclick="btnLike('{{post.id}}')" class="btn btn-small btn-success">Like</button>
                         <button onclick="btnDislike('{{post.id}}')" class="btn btn-small btn-danger">Dislike</button>
@@ -38,8 +42,10 @@
 
         {% endfor %}
 
+        <!-- N E W   P O S T -->
         <button id="new-post-btn" onclick="newPost()" class="btn btn-lg btn-primary mt-5">New Post</button>
 
+        <!-- A D D   P O S T   F O R M -->
         <div id="new-post" class="mt-3 border border-primary rounded p-2">
             <form action="/post/add" method="post">
 

@@ -4,11 +4,12 @@
 {% block content %}
 
 <div class="container pt-3">
+    <!-- B L O G   T I T L E -->
     <h1 class="display-2 mt-5 text-primary text-center g-font">{{post.title}}</h1>
     <div class="divider border border-primary"></div>
 
     <div class="row">
-
+        <!-- B L O G   B O X -->
         <div id="post-detail" class="col-9 border border-secondary rounded mt-5 p-3 mx-3 position-relative">
 
             <div class="d-flex justify-content-between">
@@ -22,14 +23,15 @@
                 <p class="mt-3">{{post.body}}</p>
             </blockquote>
 
+            <!-- B L O G   B T N S -->
             <div class="d-flex justify-content-between fixed-bottom" id="post-detail-btns">
                 <div class="mt-3 px-2">
                     <i id="likes-{{post.id}}" class="fas fa-thumbs-up text-muted">&nbsp {{post.likes}} &nbsp</i>
                     <i id="dislikes-{{post.id}}" class="fas fa-thumbs-down text-muted">&nbsp {{post.dislikes}} &nbsp</i>
                 </div>
 
-                <div>
-                    <a href="{% url 'one_post' post.pk %}"><button class="btn btn-small btn-primary">Share</button></a>
+                <div class="edit-like-btns">
+                    <a href="{% url 'one_post' post.pk %}"><button class="btn btn-small btn-primary">Edit</button></a>
                     <button onclick="btnLike('{{post.id}}')" class="btn btn-small btn-success">Like</button>
                     <button onclick="btnDislike('{{post.id}}')" class="btn btn-small btn-danger">Dislike</button>
                 </div>
@@ -38,16 +40,26 @@
 
         </div>
 
+        <!-- R E C E N T   P O S T S -->
         <div class="col text-center mt-5">
             <strong>Recent Posts</strong><br>
             <p class="mt-3">Some Post</p>
             <p class="mt-3">Some Post</p>
-            <p class="mt-3">Some Post</p>
-            <p class="mt-3">Some Post</p>
-            <p class="mt-3">Some Post</p>
+            <p class="mt-3">Probably</p>
+            <p class="mt-3">A For Loop</p>
+            <p class="mt-3">Would be Better</p>
         </div>
     </div>
 
+    <!-- P R E V   &   N E X T -->
+    <div class="row mt-1">
+        <div class="d-flex justify-content-between col-9 mx-3">
+            <small><a class="text-decoration-none text-muted" href="/post/{{post.id}}/previous">&lt;&lt; Previous Post</a></small>
+            <small><a class="text-decoration-none text-muted" href="/post/{{post.id}}/next">Next Post &gt; &gt;</a></small>
+        </div>
+    </div>
+
+    <!-- C O M M E N T S -->
     <div class="comments row">
         <div class="col-9">
             <h1 class="display-4 g-font mt-3">Comments</h1>
@@ -58,8 +70,6 @@
         </div>
 
     </div>
-
-    
 
 </div>
 

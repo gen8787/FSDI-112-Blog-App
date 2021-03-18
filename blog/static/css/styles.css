@@ -19,7 +19,7 @@ body {
 
 #post-detail {
     background-image: linear-gradient(#ebedeedc, #dddfe0a2);
-    min-height: 45vh;
+    min-height: 30vh;
 }
 
 #post-detail-btns {
@@ -29,6 +29,9 @@ body {
     padding: 5px;
 }
 
+.edit-like-btns button {
+    width: 80px;
+}
 
 /* F O O T E R */
 footer {
