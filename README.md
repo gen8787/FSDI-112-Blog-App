@@ -2,7 +2,7 @@
 
 ## Blog Posts App - Competency Report
 
-### [Project Link (does not open in new tab)]()
+### [Project Link (does not open in new tab)](https://mighty-gorge-78604.herokuapp.com)
 
 #### Acceptance criteria:
 
