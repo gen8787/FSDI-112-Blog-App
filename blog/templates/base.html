@@ -24,6 +24,24 @@
             <div class="navbar-nav">
                 <a class="nav-link" href="{% url 'home' %}">Home</a>
             </div>
+            <div class="navbar-nav">
+                <a class="nav-link" href="{% url 'new_post' %}">New Post</a>
+            </div>
+            {% if user.is_authenticated %}
+                <div class="navbar-nav">
+                    <span>
+                        <p>Welcome, {{user.username}} | <a href="{% url 'logout' %}">Logout</a></p>
+                        
+                    </span>
+                    
+                </div>
+                
+            {% else %}
+            <div class="navbar-nav">
+                <p>You are not logged in. | <a href="{% url 'login' %}">Login</a></p>
+            </div>
+                
+            {% endif %}
         </div>
     </nav>
 

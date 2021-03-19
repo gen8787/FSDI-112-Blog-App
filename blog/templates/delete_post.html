@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Blog App - Delete {{post.title}}{% endblock title %}
+
+{% block content %}
+
+<div class="container pt-3">
+    <!-- T I T L E -->
+    <h1 class="display-2 mt-5 text-primary text-center">Delete Post - {{post.title}}</h1>
+    <div class="divider bg-primary border border-primary"></div>
+
+    <!-- N E W   P O S T   F O R M -->
+    <div class="mt-3 p-3 border border-primary rounded">
+        <form action="" method="post">
+            {% csrf_token %}
+            <strong>Are you sure you want to delete "{{post.title}}"?</strong>
+            <br><br>
+            <input class="btn btn-lg btn-danger" type="submit" value="Confirm">
+            <input onclick="cancelDelete()" id="btn-delete-canx" class="btn btn-lg btn-success" type="" value="Cancel">
+        </form>
+    </div>
+
+</div>
+
+{% endblock content %}

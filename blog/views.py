@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import Post
 from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 # ---- A L L   B L O G S
 
@@ -15,6 +17,33 @@ class BlogListView(ListView):
 class BlogDetailView(DetailView):
     model = Post
     template_name = 'one_post.html'
+
+
+# ---- C R E A T E   B L O G
+
+
+class BlogCreateView(CreateView):
+    model = Post
+    template_name = 'new_post.html'
+    fields = ['title', 'author', 'body']
+
+
+# ---- U P D A T E   B L O G
+
+
+class BlogUpdateView(UpdateView):
+    model = Post
+    template_name = 'edit_post.html'
+    fields = ['title', 'body']
+
+
+# ---- D E L E T E   B L O G
+
+
+class BlogDeleteView(DeleteView):
+    model = Post
+    template_name = 'delete_post.html'
+    success_url = reverse_lazy('home')
 
 
 # ---- L I K E   P O S T

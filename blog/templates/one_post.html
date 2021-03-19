@@ -31,9 +31,10 @@
                 </div>
 
                 <div class="edit-like-btns">
-                    <a href="{% url 'one_post' post.pk %}"><button class="btn btn-small btn-primary">Edit</button></a>
+                    <a href="{% url 'edit_post' post.pk %}"><button class="btn btn-small btn-primary">Edit</button></a>
+                    <a href="{% url 'delete_post' post.pk %}"><button class="btn btn-small btn-danger">Delete</button></a>
                     <button onclick="btnLike('{{post.id}}')" class="btn btn-small btn-success">Like</button>
-                    <button onclick="btnDislike('{{post.id}}')" class="btn btn-small btn-danger">Dislike</button>
+                    <button onclick="btnDislike('{{post.id}}')" class="btn btn-small btn-warning">Dislike</button>
                 </div>
 
             </div>
