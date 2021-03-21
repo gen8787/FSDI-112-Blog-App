@@ -4,13 +4,12 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
-# ---- A L L   B L O G S
-
 
 class BlogListView(ListView):
     model = Post
     template_name = "home.html"
     context_object_name = "all_posts_list"
+# ---- A L L   B L O G S
 
 
 # ---- O N E   B L O G
@@ -20,8 +19,6 @@ class BlogDetailView(DetailView):
 
 
 # ---- C R E A T E   B L O G
-
-
 class BlogCreateView(CreateView):
     model = Post
     template_name = 'new_post.html'
@@ -29,8 +26,6 @@ class BlogCreateView(CreateView):
 
 
 # ---- U P D A T E   B L O G
-
-
 class BlogUpdateView(UpdateView):
     model = Post
     template_name = 'edit_post.html'
@@ -38,8 +33,6 @@ class BlogUpdateView(UpdateView):
 
 
 # ---- D E L E T E   B L O G
-
-
 class BlogDeleteView(DeleteView):
     model = Post
     template_name = 'delete_post.html'

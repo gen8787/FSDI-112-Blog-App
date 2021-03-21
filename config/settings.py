@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    # 'whitenoise'
     'django.contrib.staticfiles',
     'blog',  # <--- A P P
     'accounts',  # <--- A P P
@@ -122,5 +123,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]  # <--- A D D
+# STATIC_ROOT = STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))  # <--- A D D
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # <--- A D D
+# python3 manage.py collectstatic
 LOGIN_REDIRECT_URL = 'home'  # <--- A D D
 LOGOUT_REDIRECT_URL = 'home'  # <--- A D D

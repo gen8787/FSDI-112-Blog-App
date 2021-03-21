@@ -9,6 +9,11 @@ body {
 
 
 /* S P E C I F I C */
+.nav-log {
+    margin-left: auto;
+    margin-right: 10px;
+}
+
 #one-post {
     background-image: linear-gradient(#ebedeedc, #dddfe0a2);
 }
@@ -31,6 +36,11 @@ body {
 
 .edit-like-btns button {
     width: 80px;
+}
+
+.delete-error-btns button {
+    width: 250px;
+    align-items: center;
 }
 
 /* F O O T E R */
